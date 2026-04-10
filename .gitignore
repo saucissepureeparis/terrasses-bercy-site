@@ -2,3 +2,7 @@
 node_modules/
 .netlify
 .env
+
+# Originaux HEIC (versions JPG converties dans assets/gallery/)
+assets/*.heic
+assets/*.HEIC

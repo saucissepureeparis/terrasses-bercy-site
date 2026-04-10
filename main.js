@@ -178,6 +178,66 @@
   }
 
   // ========================================================================
+  // Galerie : lightbox simple
+  // ========================================================================
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  if (galleryItems.length) {
+    // Construit le DOM lightbox une seule fois
+    const lb = document.createElement('div');
+    lb.className = 'lightbox';
+    lb.setAttribute('role', 'dialog');
+    lb.setAttribute('aria-modal', 'true');
+    lb.setAttribute('aria-label', 'Galerie photo');
+    lb.innerHTML = `
+      <button class="lightbox-close" aria-label="Fermer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <button class="lightbox-prev" aria-label="Précédent">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <img class="lightbox-img" alt="">
+      <button class="lightbox-next" aria-label="Suivant">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    `;
+    document.body.appendChild(lb);
+    const lbImg = lb.querySelector('.lightbox-img');
+    const sources = [...galleryItems].map(it => {
+      const img = it.querySelector('img');
+      return { src: img?.src || '', alt: img?.alt || '' };
+    });
+    let current = 0;
+    const open = (i) => {
+      current = i;
+      lbImg.src = sources[i].src;
+      lbImg.alt = sources[i].alt;
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    };
+    const close = () => {
+      lb.classList.remove('open');
+      document.body.style.overflow = '';
+    };
+    const next = () => open((current + 1) % sources.length);
+    const prev = () => open((current - 1 + sources.length) % sources.length);
+    galleryItems.forEach((item, i) => {
+      item.addEventListener('click', () => open(i));
+    });
+    lb.querySelector('.lightbox-close').addEventListener('click', close);
+    lb.querySelector('.lightbox-next').addEventListener('click', next);
+    lb.querySelector('.lightbox-prev').addEventListener('click', prev);
+    lb.addEventListener('click', (e) => {
+      if (e.target === lb) close();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowRight') next();
+      else if (e.key === 'ArrowLeft') prev();
+    });
+  }
+
+  // ========================================================================
   // Année dynamique footer
   // ========================================================================
   const y = document.querySelector('.year');
