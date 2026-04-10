@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Les Terrasses Bercy">
+  <title>Les Terrasses Bercy</title>
+  <rect width="64" height="64" rx="10" fill="#8B1A1A"/>
+  <!-- Mâts -->
+  <line x1="12" y1="14" x2="12" y2="22" stroke="#C5A258" stroke-width="2"/>
+  <line x1="52" y1="14" x2="52" y2="22" stroke="#C5A258" stroke-width="2"/>
+  <!-- Barre supérieure -->
+  <line x1="11" y1="22" x2="53" y2="22" stroke="#C5A258" stroke-width="2"/>
+  <!-- Festons -->
+  <path d="M 12 22 q 5 8 10 0 q 5 8 10 0 q 5 8 10 0 q 5 8 10 0"
+        fill="none" stroke="#FAF5EC" stroke-width="2.4" stroke-linecap="round"/>
+  <!-- Monogramme TB -->
+  <text x="32" y="54" text-anchor="middle"
+        font-family="'Cormorant Garamond', Georgia, serif"
+        font-size="22" font-weight="700" fill="#FAF5EC"
+        letter-spacing="0.05em">TB</text>
+</svg>
