@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Les Terrasses Bercy — Feuille de styles partagée
+   La Terrasse Bercy — Feuille de styles partagée
    Palette : rouge brasserie, doré laiton, bois chaud, blanc cassé
    v2 — modernisé : split text, marquee, parallax, magnetic, cursor follower
    ========================================================================== */
@@ -1245,4 +1245,49 @@ section.dark .feature-card p { color: rgba(250, 245, 236, 0.75); }
   .lightbox-close { top: 1rem; right: 1rem; width: 44px; height: 44px; }
   .lightbox-prev { left: 0.5rem; width: 44px; height: 44px; }
   .lightbox-next { right: 0.5rem; width: 44px; height: 44px; }
+}
+
+/* --- Modale Zenchef réservation --- */
+.zenchef-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 8, 6, 0.88);
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  opacity: 1;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.zenchef-modal.open { display: flex; }
+.zenchef-modal-inner {
+  position: relative;
+  width: min(94vw, 520px);
+  height: min(88vh, 720px);
+  background: var(--blanc-casse);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+}
+.zenchef-modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--rouge);
+  border-radius: 50%;
+  z-index: 2;
+  transition: background 0.3s ease;
+}
+.zenchef-modal-close:hover { background: var(--rouge-fonce); }
+.zenchef-modal-close svg { width: 18px; height: 18px; stroke: #fff; }
+.zenchef-modal iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
 }

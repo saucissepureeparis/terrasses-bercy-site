@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 320" role="img" aria-label="Les Terrasses Bercy — Brasserie Paris 12">
-  <title>Les Terrasses Bercy</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 320" role="img" aria-label="La Terrasse Bercy — Brasserie Paris 12">
+  <title>La Terrasse Bercy</title>
   <defs>
     <style>
       .lt-wordmark { font-family: 'Cormorant Garamond', 'Playfair Display', 'Didot', 'Bodoni 72', Georgia, serif; font-weight: 600; fill: #8B1A1A; letter-spacing: 0.04em; }
@@ -34,10 +34,10 @@
   </g>
 
   <!-- Petite ligne séparatrice "Les" -->
-  <text x="260" y="130" text-anchor="middle" class="lt-sub" font-size="20">LES</text>
+  <text x="260" y="130" text-anchor="middle" class="lt-sub" font-size="20">LA</text>
 
-  <!-- TERRASSES -->
-  <text x="260" y="200" text-anchor="middle" class="lt-wordmark" font-size="68">TERRASSES</text>
+  <!-- TERRASSE -->
+  <text x="260" y="200" text-anchor="middle" class="lt-wordmark" font-size="68">TERRASSE</text>
 
   <!-- BERCY avec ornements -->
   <g transform="translate(260, 240)">
