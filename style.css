@@ -1337,6 +1337,10 @@ section.dark .feature-card p { color: rgba(250, 245, 236, 0.75); }
 .arena-header .section-title {
   color: #fff;
   font-size: clamp(2rem, 4vw, 3.2rem);
+  max-width: none;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 .arena-header .section-intro {
   color: rgba(255,255,255,0.65);
