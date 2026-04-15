@@ -1,4 +1,4 @@
-/* Les Terrasses Bercy — Script partagé v2
+/* La Terrasse Bercy — Script partagé v3
    Animations modernes : split text, cursor follower, magnetic buttons, parallax,
    reveal au scroll, nav scroll, menu mobile, sélecteur de langue */
 
@@ -235,6 +235,152 @@
       else if (e.key === 'ArrowRight') next();
       else if (e.key === 'ArrowLeft') prev();
     });
+  }
+
+  // ========================================================================
+  // Modale Zenchef réservation
+  // ========================================================================
+  const bookBtns = document.querySelectorAll('[data-zenchef]');
+  if (bookBtns.length) {
+    const zModal = document.createElement('div');
+    zModal.className = 'zenchef-modal';
+    zModal.setAttribute('role', 'dialog');
+    zModal.setAttribute('aria-modal', 'true');
+    zModal.setAttribute('aria-label', 'Réservation');
+    zModal.innerHTML = `
+      <div class="zenchef-modal-inner">
+        <button class="zenchef-modal-close" aria-label="Fermer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <iframe src="" title="Réservation Zenchef" allow="payment"></iframe>
+      </div>
+    `;
+    document.body.appendChild(zModal);
+    const zIframe = zModal.querySelector('iframe');
+    const zClose = zModal.querySelector('.zenchef-modal-close');
+    // URL Zenchef configurable via data-zenchef sur le premier bouton
+    const zenchefUrl = bookBtns[0].getAttribute('data-zenchef');
+    const openBooking = () => {
+      if (!zIframe.src || zIframe.src === location.href) {
+        zIframe.src = zenchefUrl;
+      }
+      zModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    };
+    const closeBooking = () => {
+      zModal.classList.remove('open');
+      document.body.style.overflow = '';
+    };
+    bookBtns.forEach(btn => btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openBooking();
+    }));
+    zClose.addEventListener('click', closeBooking);
+    zModal.addEventListener('click', (e) => {
+      if (e.target === zModal) closeBooking();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && zModal.classList.contains('open')) closeBooking();
+    });
+  }
+
+  // ========================================================================
+  // Accor Arena — Prochains événements (scraping côté client)
+  // ========================================================================
+  const eventsContainer = document.querySelector('.arena-events');
+  if (eventsContainer) {
+    const PROXY = 'https://api.allorigins.win/raw?url=';
+    const ARENA_URL = 'https://www.accorarena.com/evenements';
+    const lang = document.documentElement.lang || 'fr';
+
+    // Traductions des labels
+    const i18n = {
+      fr: { loading: 'Chargement…', noEvents: 'Aucun événement trouvé', seeAll: 'Voir le programme complet', error: 'Programme indisponible' },
+      en: { loading: 'Loading…', noEvents: 'No events found', seeAll: 'See full schedule', error: 'Schedule unavailable' },
+      es: { loading: 'Cargando…', noEvents: 'No se encontraron eventos', seeAll: 'Ver programa completo', error: 'Programa no disponible' },
+      pt: { loading: 'Carregando…', noEvents: 'Nenhum evento encontrado', seeAll: 'Ver programa completo', error: 'Programa indisponível' },
+      zh: { loading: '加载中…', noEvents: '未找到活动', seeAll: '查看完整节目', error: '节目不可用' },
+      it: { loading: 'Caricamento…', noEvents: 'Nessun evento trovato', seeAll: 'Vedi il programma completo', error: 'Programma non disponibile' },
+      ko: { loading: '로딩 중…', noEvents: '이벤트를 찾을 수 없습니다', seeAll: '전체 프로그램 보기', error: '프로그램을 사용할 수 없습니다' },
+      ja: { loading: '読み込み中…', noEvents: 'イベントが見つかりません', seeAll: 'プログラム全体を見る', error: 'プログラムを利用できません' }
+    };
+    const t = i18n[lang] || i18n.fr;
+
+    eventsContainer.innerHTML = `<p class="arena-loading">${t.loading}</p>`;
+
+    fetch(PROXY + encodeURIComponent(ARENA_URL))
+      .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+      .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        // Sélecteurs pour la page événements Accor Arena
+        // La structure peut varier — on cherche les blocs événements
+        const eventEls = doc.querySelectorAll('.event-card, .EventCard, [class*="event-card"], [class*="EventCard"], .agenda-item, [class*="agenda"]');
+        const events = [];
+
+        eventEls.forEach(el => {
+          const titleEl = el.querySelector('h2, h3, h4, [class*="title"], [class*="name"]');
+          const dateEl = el.querySelector('[class*="date"], time, [datetime]');
+          const imgEl = el.querySelector('img');
+          const linkEl = el.querySelector('a[href]');
+          if (titleEl) {
+            events.push({
+              title: titleEl.textContent.trim(),
+              date: dateEl ? (dateEl.getAttribute('datetime') || dateEl.textContent.trim()) : '',
+              img: imgEl ? (imgEl.src || imgEl.getAttribute('data-src') || '') : '',
+              url: linkEl ? linkEl.href : ARENA_URL
+            });
+          }
+        });
+
+        if (events.length === 0) {
+          // Fallback : on parse les liens <a> qui contiennent des infos événements
+          const allLinks = doc.querySelectorAll('a[href*="/evenement"]');
+          allLinks.forEach(a => {
+            const text = a.textContent.trim();
+            if (text.length > 3 && text.length < 200) {
+              events.push({
+                title: text.split('\n').map(s => s.trim()).filter(Boolean)[0] || text,
+                date: '',
+                img: '',
+                url: a.href.startsWith('http') ? a.href : 'https://www.accorarena.com' + a.getAttribute('href')
+              });
+            }
+          });
+        }
+
+        // Dédoublonner par titre et limiter à 6
+        const seen = new Set();
+        const unique = events.filter(e => {
+          if (seen.has(e.title)) return false;
+          seen.add(e.title);
+          return true;
+        }).slice(0, 6);
+
+        if (unique.length === 0) {
+          eventsContainer.innerHTML = `
+            <p class="arena-fallback">${t.noEvents}</p>
+            <a href="${ARENA_URL}" target="_blank" rel="noopener" class="btn btn-outline arena-cta">${t.seeAll} →</a>
+          `;
+          return;
+        }
+
+        eventsContainer.innerHTML = unique.map(ev => `
+          <a href="${ev.url}" target="_blank" rel="noopener" class="arena-event-card">
+            ${ev.img ? `<div class="arena-event-img" style="background-image:url('${ev.img}')"></div>` : '<div class="arena-event-img arena-event-placeholder"></div>'}
+            <div class="arena-event-info">
+              ${ev.date ? `<span class="arena-event-date">${ev.date}</span>` : ''}
+              <span class="arena-event-title">${ev.title}</span>
+            </div>
+          </a>
+        `).join('') + `<a href="${ARENA_URL}" target="_blank" rel="noopener" class="btn btn-outline arena-cta">${t.seeAll} →</a>`;
+      })
+      .catch(() => {
+        eventsContainer.innerHTML = `
+          <p class="arena-fallback">${t.error}</p>
+          <a href="${ARENA_URL}" target="_blank" rel="noopener" class="btn btn-outline arena-cta">${t.seeAll} →</a>
+        `;
+      });
   }
 
   // ========================================================================

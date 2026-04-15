@@ -196,10 +196,10 @@
       <h1>El alma de Bercy, desde el café de la mañana hasta la última copa</h1>
       <p class="lead">Una gran terraza, el rojo profundo de la barra de zinc, la madera cálida de los bancos antiguos: la brasserie donde el barrio se reúne antes del concierto, entre dos trenes o simplemente para disfrutar de una verdadera comida parisina.</p>
       <div class="hero-cta">
-        <a href="tel:+33143070407" class="btn btn-primary">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-          Reservar mesa
-        </a>
+        <button class="btn btn-primary" data-zenchef="https://bookings.zenchef.com/terrasse-bercy">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Reservar una mesa
+        </button>
         <a href="#brasserie" class="btn btn-outline">Descubrir la casa</a>
       </div>
       <div class="hero-meta">
@@ -312,42 +312,48 @@
     </div>
   </section>
 
-  <section id="quartier" class="dark reveal">
+  <section id="quartier" class="arena-hero reveal">
     <div class="container">
-      <span class="section-eyebrow">El Barrio</span>
-      <h2 class="section-title">El sitio antes y después del espectáculo</h2>
-      <p class="section-intro" style="color:rgba(250,245,236,0.78)">En el corazón de Bercy, la brasserie está rodeada de los grandes lugares del distrito 12. Tanto si vienes a un concierto, una película, un tren o un fin de semana en Bercy Village, esta es la dirección que debes recordar.</p>
+      <div class="arena-header">
+        <div class="arena-badge">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          Accor Arena · a 5 min a pie
+        </div>
+        <h2 class="section-title">Cene aquí, cruce la calle, viva el show</h2>
+        <p class="section-intro">La Terrasse Bercy es la brasserie más cercana al Accor Arena. Antes del concierto, después del partido — aquí es donde empieza y donde termina. Abierto hasta las 2h, los 7 días de la semana.</p>
+        <div class="arena-distance">
+          <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          A 5 minutos a pie del Accor Arena
+        </div>
+      </div>
 
-      <div class="spot-grid">
-        <div class="spot">
-          <h3>Accor Arena</h3>
-          <span class="distance">5 minutos a pie</span>
-          <p>La parada imprescindible antes o después de un concierto o un espectáculo. Cena tranquilo, luego cruza la calle. Y después del show, vuelve para la última copa: la brasserie está abierta hasta las 2h.</p>
+      <div class="arena-events"></div>
+
+      <div class="spots-secondary">
+        <div class="spot-mini">
+          <h4>Cinémathèque française</h4>
+          <span class="distance">3 min a pie</span>
+          <p>El café de después de la sesión, versión brasserie.</p>
         </div>
-        <div class="spot">
-          <h3>Cinémathèque française</h3>
-          <span class="distance">3 minutos a pie</span>
-          <p>Antes de la proyección o después del coloquio, prolonga la conversación cinéfila en una mesa parisina, en el "café de después del cine" en su mejor escenario.</p>
+        <div class="spot-mini">
+          <h4>Gare de Lyon</h4>
+          <span class="distance">8 min a pie</span>
+          <p>Un almuerzo de verdad entre dos TGV.</p>
         </div>
-        <div class="spot">
-          <h3>Gare de Lyon</h3>
-          <span class="distance">8 minutos a pie</span>
-          <p>Entre dos TGV, una parada para un verdadero almuerzo o una última copa antes de partir. Mucho más que un alto rápido: un auténtico momento parisino.</p>
+        <div class="spot-mini">
+          <h4>Gare de Bercy</h4>
+          <span class="distance">2 min a pie</span>
+          <p>Una mesa cálida a dos pasos del andén.</p>
         </div>
-        <div class="spot">
-          <h3>Gare de Bercy</h3>
-          <span class="distance">2 minutos a pie</span>
-          <p>La parada natural para los viajeros que llegan o parten hacia Lyon, Italia o Clermont-Ferrand. Una mesa cálida a unos pasos del andén.</p>
+        <div class="spot-mini">
+          <h4>Bercy Village</h4>
+          <span class="distance">10 min a pie</span>
+          <p>Después del paseo, aquí se entra en calor.</p>
         </div>
-        <div class="spot">
-          <h3>Bercy Village y Parc de Bercy</h3>
-          <span class="distance">10 minutos a pie</span>
-          <p>Después de un paseo por el parque o las antiguas bodegas de Bercy Village, vuelve a la brasserie para descansar y entrar en calor con el plato del día.</p>
-        </div>
-        <div class="spot">
-          <h3>Ministerio de Finanzas</h3>
-          <span class="distance">6 minutos a pie</span>
-          <p>El almuerzo de negocios de los ejecutivos de Bercy, el afterwork de los equipos del ministerio: aquí se cruzan el París oficial y el París de cada día.</p>
+        <div class="spot-mini">
+          <h4>Ministerio de Finanzas</h4>
+          <span class="distance">6 min a pie</span>
+          <p>El almuerzo de negocios de Bercy.</p>
         </div>
       </div>
     </div>

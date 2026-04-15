@@ -209,10 +209,10 @@
       <h1>朝のコーヒーから夜の最後の一杯まで、ベルシーの魂</h1>
       <p class="lead">広々としたテラス、亜鉛バーの深い赤、古いベンチの温かい木: パリ12区の人々がコンサート前に、列車の間に、あるいはただ本物の街の食事を楽しむために集まるブラッスリー。</p>
       <div class="hero-cta">
-        <a href="tel:+33143070407" class="btn btn-primary">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        <button class="btn btn-primary" data-zenchef="https://bookings.zenchef.com/terrasse-bercy">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           テーブルを予約
-        </a>
+        </button>
         <a href="#brasserie" class="btn btn-outline">ブラッスリーを見る</a>
       </div>
       <div class="hero-meta">
@@ -325,42 +325,48 @@
     </div>
   </section>
 
-  <section id="quartier" class="dark reveal">
+  <section id="quartier" class="arena-hero reveal">
     <div class="container">
-      <span class="section-eyebrow">街</span>
-      <h2 class="section-title">ショーの前と後のスポット</h2>
-      <p class="section-intro" style="color:rgba(250,245,236,0.78)">ベルシーの中心部に位置するブラッスリーは、パリ12区の主要な名所に囲まれています。コンサート、映画、列車、あるいはベルシービレッジでの週末のために来られる方へ、覚えておくべき住所です。</p>
+      <div class="arena-header">
+        <div class="arena-badge">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          Accor Arena · 徒歩5分
+        </div>
+        <h2 class="section-title">ここで食事して、通りを渡って、ショーを楽しむ</h2>
+        <p class="section-intro">La Terrasse Bercyはアコーアリーナに最も近いブラッスリーです。コンサートの前、試合の後 — すべてはここから始まり、ここで終わります。年中無休、深夜2時まで営業。</p>
+        <div class="arena-distance">
+          <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          アコーアリーナから徒歩5分
+        </div>
+      </div>
 
-      <div class="spot-grid">
-        <div class="spot">
-          <h3>アコーアリーナ</h3>
-          <span class="distance">徒歩5分</span>
-          <p>コンサート、バスケットボールの試合、ショーの前後に欠かせない立ち寄り場所。まず食事をしてから通りを渡ってください。ショーの後は、最後の一杯のために戻ってきてください — ブラッスリーは深夜2時まで営業しています。</p>
-        </div>
-        <div class="spot">
-          <h3>フランス・シネマテーク</h3>
+      <div class="arena-events"></div>
+
+      <div class="spots-secondary">
+        <div class="spot-mini">
+          <h4>フランス・シネマテーク</h4>
           <span class="distance">徒歩3分</span>
-          <p>上映の前や討論の後、本物のパリのテーブルで映画の会話を続けましょう — 完璧な舞台での「上映後のカフェ」の感覚。</p>
+          <p>上映後のカフェ、ブラッスリー版。</p>
         </div>
-        <div class="spot">
-          <h3>リヨン駅</h3>
+        <div class="spot-mini">
+          <h4>リヨン駅</h4>
           <span class="distance">徒歩8分</span>
-          <p>2つのTGVの間に、本物のランチや出発前の最後の一杯のために立ち寄ってください。駅での手早い食事以上のもの: 本物のパリの瞬間。</p>
+          <p>2つのTGVの間の本物のランチ。</p>
         </div>
-        <div class="spot">
-          <h3>ベルシー駅</h3>
+        <div class="spot-mini">
+          <h4>ベルシー駅</h4>
           <span class="distance">徒歩2分</span>
-          <p>リヨン、イタリア、クレルモン=フェランから到着または出発する旅行者のための自然な立ち寄り場所。プラットフォームから数歩の暖かいテーブル。</p>
+          <p>プラットフォームから数歩の暖かいテーブル。</p>
         </div>
-        <div class="spot">
-          <h3>ベルシービレッジ &amp; ベルシー公園</h3>
+        <div class="spot-mini">
+          <h4>ベルシービレッジ</h4>
           <span class="distance">徒歩10分</span>
-          <p>公園やベルシービレッジのワインセラーを散策した後、足を休め、本日のおすすめで体を温めるためにブラッスリーに戻ってきてください。</p>
+          <p>散歩の後、ここで温まりましょう。</p>
         </div>
-        <div class="spot">
-          <h3>財務省</h3>
+        <div class="spot-mini">
+          <h4>財務省</h4>
           <span class="distance">徒歩6分</span>
-          <p>ベルシーの幹部に選ばれるビジネスランチ、省庁チームのアフターワークスポット: 公式のパリと日常のパリが出会う場所。</p>
+          <p>ベルシーのビジネスランチ。</p>
         </div>
       </div>
     </div>
