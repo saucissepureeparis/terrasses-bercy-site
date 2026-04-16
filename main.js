@@ -238,50 +238,33 @@
   }
 
   // ========================================================================
-  // Modale Zenchef réservation
+  // Zenchef SDK — déclenchement depuis nos boutons [data-zenchef]
+  // Le SDK est chargé via <script> dans chaque page + <div class="zc-widget-config">
+  // API : window.ZenchefWidget.iframeBuilder.open() / close() / toggle()
   // ========================================================================
-  const bookBtns = document.querySelectorAll('[data-zenchef]');
+  const bookBtns = document.querySelectorAll('[data-zenchef], .zc-open-widget');
   if (bookBtns.length) {
-    const zModal = document.createElement('div');
-    zModal.className = 'zenchef-modal';
-    zModal.setAttribute('role', 'dialog');
-    zModal.setAttribute('aria-modal', 'true');
-    zModal.setAttribute('aria-label', 'Réservation');
-    zModal.innerHTML = `
-      <div class="zenchef-modal-inner">
-        <button class="zenchef-modal-close" aria-label="Fermer">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-        <iframe src="" title="Réservation Zenchef" allow="payment"></iframe>
-      </div>
-    `;
-    document.body.appendChild(zModal);
-    const zIframe = zModal.querySelector('iframe');
-    const zClose = zModal.querySelector('.zenchef-modal-close');
-    // URL Zenchef configurable via data-zenchef sur le premier bouton
-    const zenchefUrl = bookBtns[0].getAttribute('data-zenchef');
-    const openBooking = () => {
-      if (!zIframe.src || zIframe.src === location.href) {
-        zIframe.src = zenchefUrl;
+    const openZenchefWidget = () => {
+      if (window.ZenchefWidget && window.ZenchefWidget.iframeBuilder
+          && typeof window.ZenchefWidget.iframeBuilder.open === 'function') {
+        window.ZenchefWidget.iframeBuilder.open();
+        return;
       }
-      zModal.classList.add('open');
-      document.body.style.overflow = 'hidden';
+      // Fallback : ouverture onglet vers booking public Zenchef
+      window.open('https://bookings.zenchef.com/results?rid=353083', '_blank', 'noopener');
     };
-    const closeBooking = () => {
-      zModal.classList.remove('open');
-      document.body.style.overflow = '';
+
+    // Retry si le SDK n'est pas encore prêt au premier click
+    const waitForSDK = (cb, tries = 0) => {
+      if (window.ZenchefWidget && window.ZenchefWidget.iframeBuilder) { cb(); return; }
+      if (tries > 20) { cb(); return; }
+      setTimeout(() => waitForSDK(cb, tries + 1), 150);
     };
+
     bookBtns.forEach(btn => btn.addEventListener('click', (e) => {
       e.preventDefault();
-      openBooking();
+      waitForSDK(openZenchefWidget);
     }));
-    zClose.addEventListener('click', closeBooking);
-    zModal.addEventListener('click', (e) => {
-      if (e.target === zModal) closeBooking();
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && zModal.classList.contains('open')) closeBooking();
-    });
   }
 
   // ========================================================================
