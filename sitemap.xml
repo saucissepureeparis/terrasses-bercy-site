@@ -1,53 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- FR (langue par défaut) -->
   <url>
     <loc>https://www.terrassebercy.fr/</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="fr-FR" href="https://www.terrassebercy.fr/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.terrassebercy.fr/en/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.terrassebercy.fr/es/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.terrassebercy.fr/pt/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.terrassebercy.fr/it/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.terrassebercy.fr/zh/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.terrassebercy.fr/ja/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.terrassebercy.fr/it/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.terrassebercy.fr/ko/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.terrassebercy.fr/ja/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.terrassebercy.fr/"/>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
   </url>
+
+  <!-- EN -->
   <url>
     <loc>https://www.terrassebercy.fr/en/</loc>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://www.terrassebercy.fr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.terrassebercy.fr/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.terrassebercy.fr/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.terrassebercy.fr/pt/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.terrassebercy.fr/zh/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.terrassebercy.fr/it/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.terrassebercy.fr/ko/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.terrassebercy.fr/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.terrassebercy.fr/"/>
   </url>
+
+  <!-- ES -->
   <url>
     <loc>https://www.terrassebercy.fr/es/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
+
+  <!-- PT -->
   <url>
     <loc>https://www.terrassebercy.fr/pt/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://www.terrassebercy.fr/it/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
+
+  <!-- ZH -->
   <url>
     <loc>https://www.terrassebercy.fr/zh/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
+
+  <!-- IT -->
   <url>
-    <loc>https://www.terrassebercy.fr/ja/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://www.terrassebercy.fr/it/</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
+
+  <!-- KO -->
   <url>
     <loc>https://www.terrassebercy.fr/ko/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
+
+  <!-- JA -->
+  <url>
+    <loc>https://www.terrassebercy.fr/ja/</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>

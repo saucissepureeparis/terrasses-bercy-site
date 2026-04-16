@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="La Terrasse Bercy — Brasserie Paris 12">
+  <title>La Terrasse Bercy — Logo Instagram</title>
+  <defs>
+    <style>
+      .lt-wordmark { font-family: 'Cormorant Garamond', 'Playfair Display', 'Didot', 'Bodoni 72', Georgia, serif; font-weight: 600; fill: #8B1A1A; letter-spacing: 0.04em; }
+      .lt-sub { font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 500; fill: #8B1A1A; letter-spacing: 0.42em; }
+      .lt-tag { font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; fill: #8B1A1A; letter-spacing: 0.38em; }
+    </style>
+  </defs>
+
+  <!-- Fond blanc -->
+  <rect width="1080" height="1080" fill="#FFFFFF"/>
+
+  <!-- Logo centré avec marge -->
+  <g transform="translate(540, 540) scale(1.5)">
+    <!-- Auvent stylisé de brasserie parisienne -->
+    <g transform="translate(0, -90)">
+      <!-- Tige supérieure -->
+      <line x1="-115" y1="-10" x2="115" y2="-10" stroke="#8B1A1A" stroke-width="1.6"/>
+      <!-- Barre rouge -->
+      <line x1="-110" y1="0" x2="110" y2="0" stroke="#8B1A1A" stroke-width="3"/>
+      <!-- Festons de l'auvent -->
+      <path d="M -110 0 q 11 18 22 0 q 11 18 22 0 q 11 18 22 0 q 11 18 22 0 q 11 18 22 0 q 11 18 22 0 q 11 18 22 0 q 11 18 22 0 q 11 18 22 0 q 11 18 22 0"
+            fill="none" stroke="#8B1A1A" stroke-width="3" stroke-linecap="round"/>
+      <!-- Pampilles -->
+      <circle cx="-110" cy="0" r="3.5" fill="#8B1A1A"/>
+      <circle cx="-66" cy="0" r="3" fill="#8B1A1A"/>
+      <circle cx="-22" cy="0" r="3" fill="#8B1A1A"/>
+      <circle cx="22" cy="0" r="3" fill="#8B1A1A"/>
+      <circle cx="66" cy="0" r="3" fill="#8B1A1A"/>
+      <circle cx="110" cy="0" r="3.5" fill="#8B1A1A"/>
+      <!-- Mâts latéraux -->
+      <line x1="-110" y1="-10" x2="-110" y2="-30" stroke="#8B1A1A" stroke-width="2.5"/>
+      <line x1="110" y1="-10" x2="110" y2="-30" stroke="#8B1A1A" stroke-width="2.5"/>
+      <!-- Étoile centrale Art Déco -->
+      <g transform="translate(0,-22)">
+        <path d="M 0 -8 L 2 -2 L 8 0 L 2 2 L 0 8 L -2 2 L -8 0 L -2 -2 Z" fill="#8B1A1A"/>
+      </g>
+    </g>
+
+    <!-- LA -->
+    <text x="0" y="-30" text-anchor="middle" class="lt-sub" font-size="20">LA</text>
+
+    <!-- TERRASSE -->
+    <text x="0" y="40" text-anchor="middle" class="lt-wordmark" font-size="68">TERRASSE</text>
+
+    <!-- BERCY avec ornements -->
+    <g transform="translate(0, 80)">
+      <line x1="-110" y1="0" x2="-46" y2="0" stroke="#8B1A1A" stroke-width="1.2"/>
+      <circle cx="-38" cy="0" r="2" fill="#8B1A1A"/>
+      <text x="0" y="6" text-anchor="middle" class="lt-sub" font-size="24">BERCY</text>
+      <circle cx="38" cy="0" r="2" fill="#8B1A1A"/>
+      <line x1="46" y1="0" x2="110" y2="0" stroke="#8B1A1A" stroke-width="1.2"/>
+    </g>
+
+    <!-- Tagline -->
+    <text x="0" y="122" text-anchor="middle" class="lt-tag" font-size="11">BRASSERIE  ·  PARIS 12</text>
+  </g>
+</svg>

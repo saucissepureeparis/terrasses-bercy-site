@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# Sitemap
 Sitemap: https://www.terrassebercy.fr/sitemap.xml
+
+# Crawl-delay pour éviter surcharge (optionnel, conservateur)
+Crawl-delay: 1
