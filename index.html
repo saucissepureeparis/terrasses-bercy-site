@@ -111,15 +111,15 @@
         "name": "Où manger avant un concert à l'Accor Arena ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "La Terrasse Bercy se trouvent à 5 minutes à pied de l'Accor Arena, au 102 rue de Bercy. La brasserie est ouverte de 6h à 2h, 7 jours sur 7, ce qui en fait l'adresse idéale avant ou après un concert ou un spectacle."
+          "text": "La Terrasse Bercy se trouve à 5 minutes à pied de l'Accor Arena, au 102 rue de Bercy. La brasserie est ouverte de 6h à 2h, 7 jours sur 7, ce qui en fait l'adresse idéale avant ou après un concert ou un spectacle."
         }
       },
       {
         "@type": "Question",
-        "name": "La Terrasse Bercy ont-elles une terrasse extérieure ?",
+        "name": "La Terrasse Bercy a-t-elle une terrasse extérieure ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Oui, La Terrasse Bercy disposent d'une grande terrasse parisienne, ouverte dès les beaux jours, idéale pour un déjeuner au soleil, un afterwork entre amis ou un dîner en plein air dans le 12e arrondissement."
+          "text": "Oui, La Terrasse Bercy dispose d'une grande terrasse parisienne, ouverte dès les beaux jours, idéale pour un déjeuner au soleil, un afterwork entre amis ou un dîner en plein air dans le 12e arrondissement."
         }
       },
       {
@@ -145,8 +145,60 @@
           "@type": "Answer",
           "text": "L'adresse se situe au 102 rue de Bercy, Paris 12e. Les stations Bercy (lignes 6 et 14) et Gare de Lyon (lignes 1, 14, RER A et D) sont à quelques minutes à pied. La gare de Lyon et la gare de Bercy sont également très proches."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "À quelle heure réserver pour un concert à 20h à l'Accor Arena ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pour un concert qui commence à 20h à l'Accor Arena, réservez une table à 18h ou 18h30. Vous avez 1h à 1h30 pour dîner tranquille, prendre le dessert, puis marcher 5 minutes jusqu'à l'Arena. Arrivée à 19h30/19h45 à l'entrée, largement dans les temps."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Où boire un dernier verre après un match ou un spectacle à l'Accor Arena ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La Terrasse Bercy reste ouverte jusqu'à 2h du matin, 7j/7. Les soirs de spectacle à l'Arena, c'est l'adresse naturelle pour un dernier cocktail ou un plat chaud après la sortie, à 5 minutes à pied de la salle."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Peut-on réserver pour un groupe venant à l'Accor Arena ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, plusieurs espaces sont privatisables pour des groupes venant à un concert ou un match à l'Accor Arena : salle principale, espace bar & cocktails, terrasse en saison. Formats adaptés aux horaires serrés. Contactez-nous au 01 43 07 04 07 pour un devis groupe."
+        }
       }
     ]
+  }
+  </script>
+
+  <!-- Schema.org : Service (privatisation) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Privatisation d'espace événementiel",
+    "provider": {
+      "@type": "Restaurant",
+      "name": "La Terrasse Bercy",
+      "telephone": "+33143070407",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "102 rue de Bercy",
+        "addressLocality": "Paris",
+        "postalCode": "75012",
+        "addressCountry": "FR"
+      }
+    },
+    "areaServed": "Paris 12, Bercy, Accor Arena, Gare de Lyon",
+    "description": "Privatisation d'espace pour anniversaire, repas d'équipe, cocktail d'entreprise, afterwork, soirée groupe concert Accor Arena. Salle principale, bar, terrasse en saison.",
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "url": "https://www.terrassebercy.fr/#privatisation"
+    }
   }
   </script>
 </head>
@@ -344,7 +396,7 @@
           Accor Arena · à deux pas
         </div>
         <h2 class="section-title">L'Accor Arena est à deux pas. Littéralement.</h2>
-        <p class="section-intro">La Terrasse Bercy est la brasserie la plus proche de l'Accor Arena — à peine 5 minutes à pied. Avant le concert, après le match, c'est ici que ça commence et que ça finit. Ouverts jusqu'à 2h du matin, 7j/7.</p>
+        <p class="section-intro">La Terrasse Bercy est la brasserie la plus proche de l'Accor Arena — à peine 5 minutes à pied. Avant le concert, après le match, c'est ici que ça commence et que ça finit. Ouverte jusqu'à 2h du matin, 7j/7.</p>
         <div class="arena-distance">
           <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
           À 5 minutes à pied de l'Accor Arena
@@ -376,9 +428,12 @@
         </div>
       </div>
 
-      <div class="text-center" style="margin-top:2rem">
+      <div class="text-center" style="margin-top:2rem; display:flex; gap:1rem; justify-content:center; flex-wrap:wrap">
+        <a href="/accor-arena/" class="btn btn-primary arena-cta" style="background:var(--or); color:var(--noir); border-color:var(--or);">
+          Guide complet Accor Arena →
+        </a>
         <a href="https://www.accorarena.com/fr/programmation" target="_blank" rel="noopener" class="btn btn-outline arena-cta">
-          Voir le programme Accor Arena →
+          Voir le programme →
         </a>
       </div>
 
@@ -468,11 +523,11 @@
       <div class="faq">
         <details>
           <summary>Où manger avant un concert à l'Accor Arena ?</summary>
-          <p>La Terrasse Bercy se trouvent à 5 minutes à pied de l'Accor Arena, au 102 rue de Bercy. La brasserie est ouverte de 6h à 2h, 7 jours sur 7 : c'est l'adresse idéale pour dîner avant un concert et y revenir pour le dernier verre après le show.</p>
+          <p>La Terrasse Bercy se trouve à 5 minutes à pied de l'Accor Arena, au 102 rue de Bercy. La brasserie est ouverte de 6h à 2h, 7 jours sur 7 : c'est l'adresse idéale pour dîner avant un concert et y revenir pour le dernier verre après le show.</p>
         </details>
         <details>
           <summary>La brasserie a-t-elle une terrasse extérieure ?</summary>
-          <p>Oui, La Terrasse Bercy disposent d'une grande terrasse parisienne, ouverte dès les premiers beaux jours, idéale pour un déjeuner au soleil, un afterwork entre amis ou un dîner en plein air dans le 12e arrondissement.</p>
+          <p>Oui, La Terrasse Bercy dispose d'une grande terrasse parisienne, ouverte dès les premiers beaux jours, idéale pour un déjeuner au soleil, un afterwork entre amis ou un dîner en plein air dans le 12e arrondissement.</p>
         </details>
         <details>
           <summary>Peut-on privatiser un espace pour un événement ?</summary>

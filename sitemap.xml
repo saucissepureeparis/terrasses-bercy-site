@@ -84,4 +84,12 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Landing page Accor Arena (SEO long-tail) -->
+  <url>
+    <loc>https://www.terrassebercy.fr/accor-arena/</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
 </urlset>
